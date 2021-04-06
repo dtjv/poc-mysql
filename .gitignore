@@ -1,0 +1,19 @@
+# deps
+node_modules/
+
+# env
+.env
+
+# app
+data/
+
+# tools
+.yarn-integrity
+
+# logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
