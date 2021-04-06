@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  mysql_service_demo:
+    image: mysql
+    restart: always
+    volumes:
+      - ./data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db_demo
+    ports:
+      - "3307:3306"
+    networks:
+      - backend_demo
+    container_name: mysql_demo
+
+networks:
+  backend_demo:
