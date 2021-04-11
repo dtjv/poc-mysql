@@ -66,15 +66,15 @@ INSERT INTO classes (name, department_id) VALUES ('intro to poetry', 42);
 INSERT INTO classes (name, department_id) VALUES ('biz writing', 42);
 INSERT INTO classes (name, department_id) VALUES ('our ancestors', 43);
 
-INSERT INTO classes_students (class_id, student_id) VALUES (40, 10);
-INSERT INTO classes_students (class_id, student_id) VALUES (40, 11);
-INSERT INTO classes_students (class_id, student_id) VALUES (40, 12);
-INSERT INTO classes_students (class_id, student_id) VALUES (40, 13);
-INSERT INTO classes_students (class_id, student_id) VALUES (41, 10);
-INSERT INTO classes_students (class_id, student_id) VALUES (41, 12);
-INSERT INTO classes_students (class_id, student_id) VALUES (42, 10);
-INSERT INTO classes_students (class_id, student_id) VALUES (42, 11);
-INSERT INTO classes_students (class_id, student_id) VALUES (42, 13);
-INSERT INTO classes_students (class_id, student_id) VALUES (43, 11);
-INSERT INTO classes_students (class_id, student_id) VALUES (43, 12);
+INSERT INTO classes_students (class_id, student_id) VALUES (30, 10);
+INSERT INTO classes_students (class_id, student_id) VALUES (30, 11);
+INSERT INTO classes_students (class_id, student_id) VALUES (30, 12);
+INSERT INTO classes_students (class_id, student_id) VALUES (30, 13);
+INSERT INTO classes_students (class_id, student_id) VALUES (31, 10);
+INSERT INTO classes_students (class_id, student_id) VALUES (31, 12);
+INSERT INTO classes_students (class_id, student_id) VALUES (32, 10);
+INSERT INTO classes_students (class_id, student_id) VALUES (32, 11);
+INSERT INTO classes_students (class_id, student_id) VALUES (32, 13);
+INSERT INTO classes_students (class_id, student_id) VALUES (33, 11);
+INSERT INTO classes_students (class_id, student_id) VALUES (33, 12);
 
