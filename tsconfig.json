@@ -1,0 +1,6 @@
+{
+  "extends": "@dtjv/tsconfig",
+  "compilerOptions": {
+    "outDir": "dist"
+  }
+}
