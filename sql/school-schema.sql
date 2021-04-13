@@ -1,0 +1,43 @@
+DROP TABLE IF EXISTS students;
+DROP TABLE IF EXISTS teachers;
+DROP TABLE IF EXISTS classes;
+DROP TABLE IF EXISTS departments;
+DROP TABLE IF EXISTS classes_students;
+
+CREATE TABLE departments (
+  department_id INT(9) UNSIGNED NOT NULL AUTO_INCREMENT,
+  name VARCHAR(50) NOT NULL,
+  PRIMARY KEY (department_id)
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
+
+CREATE TABLE students (
+  student_id INT(9) UNSIGNED NOT NULL AUTO_INCREMENT,
+  name VARCHAR(50) NOT NULL,
+  PRIMARY KEY (student_id)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
+CREATE TABLE teachers (
+  teacher_id INT(9) UNSIGNED NOT NULL AUTO_INCREMENT,
+  name VARCHAR(50) NOT NULL,
+  department_id INT(9) UNSIGNED NOT NULL,
+  PRIMARY KEY (teacher_id),
+  FOREIGN KEY (department_id)
+    REFERENCES departments(department_id)
+    ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+
+CREATE TABLE classes (
+  class_id INT(9) UNSIGNED NOT NULL AUTO_INCREMENT,
+  name VARCHAR(50) NOT NULL,
+  department_id INT(9) UNSIGNED NOT NULL,
+  PRIMARY KEY (class_id),
+  FOREIGN KEY (department_id)
+    REFERENCES departments(department_id)
+    ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+
+CREATE TABLE classes_students (
+  class_id INT(9) UNSIGNED NOT NULL,
+  student_id INT(9) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
