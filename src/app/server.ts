@@ -1,9 +1,7 @@
-import express, { json, urlencoded, Response } from 'express'
+import 'dotenv/config'
+import { app } from './app'
 
-const app = express()
+const host = process.env.HOST
+const port = process.env.PORT
 
-app.use(json())
-app.use(urlencoded({ extended: true }))
-
-app.get('/', async (_, res: Response) => res.send('api/v0/'))
-app.listen(3000, () => console.log(`Server listening on 3000.\n`))
+app.listen(port, () => console.log(`Server listening on ${host}:${port}.`))
