@@ -1,6 +1,6 @@
 # README
 
-A simple express CRUD server, written in typescript that talks to a MySQL
+A _simple_ express CRUD server, written in typescript that talks to a MySQL
 running in a Docker container. The server will use the node driver for MySQL
 directly.
 
@@ -22,48 +22,33 @@ directly.
 [^3]: https://docs.docker.com/ci-cd/best-practices/#inner-and-outer-loops
 [^4]: https://docs.docker.com/language/nodejs/run-tests/
 
-## structure
+## app structure
 
       api/
         package.json
         src/
-          index.ts
           app.ts
+          server.ts
+          db/
+            __tests__
+            mysql.ts
+          models/
+            todo.ts
+            todos.ts
           routes/
-            v0/
-              todos/
-                index.ts
-                create-todo.ts
-                get-todo.ts
-                get-todos.ts
-                update-todo.ts
-                delete-todo.ts
-              users/
-                index.ts
-                create-user.ts
-                get-user.ts
-                get-users.ts
-                update-user.ts
-                delete-user.ts
-        tests/
+            __tests__
+            index.ts
+            create-todo.ts
+            get-todos.ts
+            update-todo.ts
+            delete-todo.ts
 
-## REST api design
+## api design
 
-Prefix all routes with `/api/v0`.
-
-    POST   /todos
-    GET    /todos
-    GET    /todos?userId=:uid
-    GET    /todos/:tid
-    PUT    /todos/:tid
-    DELETE /todos/:tid
-
-    POST   /users
-    GET    /users
-    GET    /users/:uid
-    GET    /users/:uid/todos
-    PUT    /users/:uid
-    DELETE /users/:uid
+    POST   /api/todos
+    GET    /api/todos
+    PATCH  /api/todos/:id
+    DELETE /api/todos/:id
 
 ## docker run
 
