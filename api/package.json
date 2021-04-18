@@ -12,12 +12,16 @@
     "build": "tsc -p src/server.ts"
   },
   "dependencies": {
+    "await-to-js": "3.0.0",
     "dotenv": "8.2.0",
-    "express": "4.17.1"
+    "express": "4.17.1",
+    "mysql": "2.18.1",
+    "wait-port": "0.2.9"
   },
   "devDependencies": {
     "@dtjv/tsconfig": "0.1.1",
     "@types/express": "4.17.11",
+    "@types/mysql": "2.15.18",
     "@typescript-eslint/eslint-plugin": "4.21.0",
     "@typescript-eslint/parser": "4.21.0",
     "eslint": "7.24.0",
