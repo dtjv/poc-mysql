@@ -1,16 +1,14 @@
 # README
 
-In this folder, I manually run SQL files against a msql container.
+In this folder, I manually run SQL files against a MySQL Docker container.
 
 ## docker run
-
-This is how I'd run a mysql container from the command line.
 
 ```sh
 # pull mysql image down to my laptop - just do this once.
 $ docker pull mysql
 
-# start a mysql container
+# start a mysql docker container
 $ docker run \
   -it \                           # interactive terminal
   --rm \                          # remove container if it exists
@@ -49,41 +47,40 @@ container is identified on the network.
 
 ## docker compose
 
-The `docker run` command is too long and complex. Let's use a
-`docker-compose.yml` file to simplify things.
+The `docker run` command is too long and complex. Let's use `docker-compose` to
+simplify things.
 
 ```yaml
 # docker-compose.yml
-version: '3.9' # supposedly not used
+version: "3.9" # supposedly not used
 
 services:
   mysql_service: # same as --network-alias flag
     image: mysql # w/o tag, grabs latest
     restart: always
     volumes:
-      #- ./data:/var/lib/mysql # bind mount version
-      - mysql-data:/var/lib/mysql # named volume
+      - ./data:/var/lib/mysql # bind mount version
+      #- mysql-data:/var/lib/mysql # named volume
     environment:
       MYSQL_ROOT_PASSWORD: root # should be a secret
       MYSQL_DATABASE: school_db # automatically create this database
     ports:
-      - '3307:3306' # exposes 3307
+      - "3307:3306" # exposes 3307
     networks:
       - school_backend # custom named network
     container_name: mysql_school # same as --name flag
 
-volumes: # not needed if using bind mounts
-  mysql-data:
+# needed if using a named volume
+#volumes:
+#  mysql-data:
 networks:
   school_backend:
 ```
 
 ## sql queries
 
-In this section, I detail how to **manually** start a mysql container, create
-the database schema, populate the database and issue queries.
-
-> The docker-compose.yml is using the 'bind mount' that is commented out above.
+In this section, I **manually** start a mysql docker container, create a
+database schema, populate the database and issue queries.
 
 **terminal 1**
 
@@ -95,14 +92,12 @@ the database schema, populate the database and issue queries.
 1. write sql
 1. copy sql file to bind mount host folder (i.e. `data/`)
 
+> now, the sql source file is available to the running container in
+> `/var/lib/mysql/` - via the bind mount specified in `docker-compose.yml`.
+
 **terminal 1**
 
 1. run sql file in mounted folder against the database
-
-[^1]:
-    now, the sql source file is available to the running container in
-    `/var/lib/mysql/` - via the bind mount specified in the `docker-compose.yml`
-    file.
 
 ### step-by-step
 
