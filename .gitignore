@@ -6,6 +6,7 @@ node_modules/
 
 # app
 data/
+dist/
 
 # tools
 .yarn-integrity
