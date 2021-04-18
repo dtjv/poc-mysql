@@ -9,7 +9,8 @@
     "format": "prettier --write .",
     "lint": "eslint . --ext .ts",
     "dev": "ts-node src/server.ts",
-    "build": "tsc -p src/server.ts"
+    "build": "tsc",
+    "start": "node dist/server.js"
   },
   "dependencies": {
     "await-to-js": "3.0.0",
