@@ -4,5 +4,13 @@ export const CREATE_TABLE = `
     task VARCHAR(255) NOT NULL,
     completed BOOLEAN,
     PRIMARY KEY (todo_id)
-  ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+  ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8
+`
+
+export const ALLOW_ROOT_USER = `
+  ALTER USER 'root' IDENTIFIED WITH mysql_native_password BY 'root'
+`
+
+export const FLUSH_PRIVILEGES = `
+  FLUSH PRIVILEGES
 `
