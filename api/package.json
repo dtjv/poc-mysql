@@ -1,7 +1,5 @@
 {
-  "name": "mysql-demo",
-  "version": "0.1.0",
-  "description": "",
+  "name": "api",
   "author": "David J. Valles <davidtjvalles@gmail.com>",
   "license": "MIT",
   "private": true,
