@@ -3,8 +3,7 @@ import to from 'await-to-js'
 import { app } from './app'
 import * as db from './db/mysql'
 
-const host = process.env.SERVER_HOST || 'localhost'
-const port = parseInt(process.env.SERVER_PORT || '3001')
+const port = parseInt(process.env.API_PORT || '3001')
 
 async function startup() {
   const [err] = await to(db.startup())
@@ -14,9 +13,7 @@ async function startup() {
     process.exit(1)
   }
 
-  app.listen(port, host, () =>
-    console.log(`Server listening on ${host}:${port}.`)
-  )
+  app.listen(port, () => console.log(`Server listening on port ${port}.`))
 }
 
 async function shutdown() {
