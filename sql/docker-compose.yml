@@ -9,11 +9,3 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: school_db
-    ports:
-      - '3307:3306'
-    networks:
-      - school_backend
-    container_name: mysql_school
-
-networks:
-  school_backend:
