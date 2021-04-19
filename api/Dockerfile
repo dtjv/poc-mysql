@@ -1,13 +1,13 @@
 FROM node:alpine as base
-WORKDIR /app
+WORKDIR /api
 COPY package.json yarn.lock .
+RUN yarn install --frozen-lockfile
+COPY src .
+COPY tsconfig.json .
 
 FROM base as test
-RUN yarn install --frozen-lockfile
-COPY src/app .
 RUN yarn test
 
-FROM base as prod
-RUN yarn install --frozen-lockfile
-COPY . .
+FROM base as production
+RUN yarn build
 CMD ["yarn", "start"]

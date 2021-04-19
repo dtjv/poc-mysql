@@ -1,21 +1,23 @@
 version: '3.9'
 
 services:
-  #  app:
-  #    image: node:12-alpine
-  #    command: sh -c 'yarn install && yarn dev'
-  #    ports:
-  #      - 3000:3000
-  #    working_dir: /app
-  #    volumes:
-  #      - ./:/app
-  #    networks:
-  #      - todo_backend
-  #    environment:
-  #      MYSQL_HOST: mysql_service
-  #      MYSQL_USER: root
-  #      MYSQL_PASSWORD: root
-  #      MYSQL_DB: todo_db
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    networks:
+      - db_backend
+    environment:
+      API_PREFIX: /api
+      API_PORT: 3000
+      MYSQL_HOST: mysql_service
+      MYSQL_PORT: 3307
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_DB: todo_db
+    container_name: api_server
 
   mysql_service:
     image: mysql
