@@ -1,6 +1,6 @@
 # sql
 
-SQL practice using MySQL and Docker.
+A proof-of-concept setup to practice SQL, using MySQL and Docker.
 
 ### [Read the article](https://dtjv.io/sql-practice-with-mysql-and-docker/)
 

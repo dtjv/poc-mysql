@@ -1,11 +1,6 @@
-# mysql-demo
+# poc-mysql
 
-SQL practice using MySQL and Docker.
-
-## Projects
-
-This repo is a collection of sub-project folders. Please refer to the README in
-the sub-project of interest.
+A collection of proof-of-concept projects using Express, MySQL and Docker.
 
 - sql/[README.md](./sql/README.md)
 - api/[README.md](./api/README.md)
